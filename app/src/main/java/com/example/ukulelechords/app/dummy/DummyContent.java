@@ -24,18 +24,19 @@ public class DummyContent {
     public static Map<String, DummyItem> ITEM_MAP = new HashMap<String, DummyItem>();
 
     static {
-        addItem(new DummyItem("1", "A"));
-        addItem(new DummyItem("2", "A#/Bb"));
-        addItem(new DummyItem("3", "B"));
-        addItem(new DummyItem("4", "C"));
-        addItem(new DummyItem("5", "C#/Db"));
-        addItem(new DummyItem("6", "D"));
-        addItem(new DummyItem("7", "D#/Eb"));
-        addItem(new DummyItem("8", "E"));
-        addItem(new DummyItem("9", "F"));
-        addItem(new DummyItem("10", "F#/Gb"));
-        addItem(new DummyItem("11", "G"));
-        addItem(new DummyItem("12", "G#/Ab"));
+        // Using hex for some of the fingerings, leading 0 defaults to octal!
+        addItem(new DummyItem("1", "A", 2220));
+        addItem(new DummyItem("2", "A#/Bb", 0xCEE));
+        addItem(new DummyItem("3", "B", 1402));
+        addItem(new DummyItem("4", "C", 2010));
+        addItem(new DummyItem("5", "C#/Db", 3120));
+        addItem(new DummyItem("6", "D", 0xE8));
+        addItem(new DummyItem("7", "D#/Eb", 1343));
+        addItem(new DummyItem("8", "E", 2100));
+        addItem(new DummyItem("9", "F", 3211));
+        addItem(new DummyItem("10", "F#/Gb", 4322));
+        addItem(new DummyItem("11", "G", 0x3));
+        addItem(new DummyItem("12", "G#/Ab", 1114));
     }
 
     private static void addItem(DummyItem item) {
@@ -49,15 +50,25 @@ public class DummyContent {
     public static class DummyItem {
         public String id;
         public String content;
+        public int fingering;
 
-        public DummyItem(String id, String content) {
+        public DummyItem(String id, String content, int fingering) {
             this.id = id;
             this.content = content;
+            this.fingering = fingering;
         }
 
         @Override
         public String toString() {
             return content;
+        }
+
+        public void setFingering(int fingering) {
+            this.fingering = fingering;
+        }
+
+        private int getFingering(){
+            return this.fingering;
         }
     }
 }
