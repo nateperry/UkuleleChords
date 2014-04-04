@@ -24,10 +24,18 @@ public class DummyContent {
     public static Map<String, DummyItem> ITEM_MAP = new HashMap<String, DummyItem>();
 
     static {
-        // Add 3 sample items.
-        addItem(new DummyItem("1", "Item 1"));
-        addItem(new DummyItem("2", "Item 2"));
-        addItem(new DummyItem("3", "Item 3"));
+        addItem(new DummyItem("1", "A"));
+        addItem(new DummyItem("2", "A#/Bb"));
+        addItem(new DummyItem("3", "B"));
+        addItem(new DummyItem("4", "C"));
+        addItem(new DummyItem("5", "C#/Db"));
+        addItem(new DummyItem("6", "D"));
+        addItem(new DummyItem("7", "D#/Eb"));
+        addItem(new DummyItem("8", "E"));
+        addItem(new DummyItem("9", "F"));
+        addItem(new DummyItem("10", "F#/Gb"));
+        addItem(new DummyItem("11", "G"));
+        addItem(new DummyItem("12", "G#/Ab"));
     }
 
     private static void addItem(DummyItem item) {
