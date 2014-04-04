@@ -35,6 +35,8 @@ public class ItemListActivity extends FragmentActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_item_list);
 
+        getActionBar().hide();  // Don't want to take up space with UkuleleChords title
+
         if (findViewById(R.id.item_detail_container) != null) {
             // The detail container view will be present only in the
             // large-screen layouts (res/values-large and
