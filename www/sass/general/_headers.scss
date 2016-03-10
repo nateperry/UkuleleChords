@@ -1,8 +1,13 @@
-h1 {
-  font-size: 24px;
-  font-weight: normal;
-  margin: 0px;
+h1, h2, h3, h4, h5, h6 {
+  color: $yellow;
+  font-family: 'Montserrat';
+  font-weight: 400;
+  margin: 0 0 0.5em;
   overflow: visible;
-  padding: 0px;
-  text-align: center;
+  padding: 0;
+}
+
+h1 {
+  font-size: 28px;
+  letter-spacing: 1px;
 }

@@ -7,10 +7,10 @@ body {
   -webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
   -webkit-user-select: none;                  /* prevent copy paste, to allow, change 'none' to 'text' */
   background-color: $blue-gray;
-  @include background-image(linear-gradient(top, $purple-gray 0%, $blue-gray 51%));
+  @include background-image(linear-gradient(120deg, $purple-gray 0%, $blue-gray 50%, $magenta 100%));
   background-attachment: fixed;
   color: $white;
-  font-family: 'HelveticaNeue-Light', 'HelveticaNeue', Helvetica, Arial, sans-serif;
+  font-family: 'Open Sans', Helvetica, Arial, sans-serif;
   font-size: 12px;
   height: 100%;
   margin: 0px;
