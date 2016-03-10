@@ -97,3 +97,8 @@ platforms/ios/www/*
 # Files that might appear on external disk
 .Spotlight-V100
 .Trashes
+
+### Sass ###
+.sass-cache/
+*.css.map
+
