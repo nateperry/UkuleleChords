@@ -1,10 +1,8 @@
-/* line 1, ../sass/general/_body.scss */
 * {
   -webkit-tap-highlight-color: transparent;
   /* make transparent link selection, adjust last value opacity 0 to 1.0 */
 }
 
-/* line 5, ../sass/general/_body.scss */
 body {
   -webkit-touch-callout: none;
   /* prevent callout to copy image, etc when tap to hold */
@@ -31,20 +29,16 @@ body {
 }
 
 /* Portrait layout (default) */
-/* line 2, ../sass/general/_app.scss */
 .app {
   position: absolute;
-  /* position in the center of the screen */
   left: 50%;
   top: 50%;
-  height: 50px;
-  /* text area height */
+  min-height: 350px;
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
   width: 225px;
-  /* text area width */
-  text-align: center;
-  margin: -115px 0px 0px -112px;
-  /* offset vertical: half of image height and text area height */
-  /* offset horizontal: half of text area width */
 }
 
 /* Landscape layout (with min-width) */

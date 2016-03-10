@@ -1,0 +1,18 @@
+{
+  "name": "ukulelechords",
+  "author": "Nate Perry",
+  "version": "1.0.0",
+  "private": true,
+  "description": "",
+  "main": "gulpfile.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nateperry/UkuleleChords.git"
+  },
+  "devDependencies": {
+    "browserify": "^13.0.0",
+    "gulp": "^3.9.1",
+    "gulp-compass": "^2.1.0",
+    "vinyl-source-stream": "^1.1.0"
+  }
+}
