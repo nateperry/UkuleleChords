@@ -21,6 +21,11 @@ gulp.task('compass', function() {
 
 gulp.task('browserify', function() {
   return browserify('./www/js/src/app.js')
+    .on('error', function(error) {
+      // Would like to catch the error here
+      console.log(error);
+      this.emit('end');
+    })
     .bundle()
     // Pass desired output filename to vinyl-source-stream
     .pipe(source('app.js'))
@@ -33,4 +38,4 @@ gulp.task('watch', function() {
   gulp.watch('./www/sass/**', ['compass']);
 });
 
-gulp.task('default', ['watch']);
+gulp.task('default', ['browserify', 'watch']);

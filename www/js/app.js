@@ -9,18 +9,31 @@ app.initialize();
 /**
  *  Let's start doing our own stuff
  */
-var chords = require('./chords.js');
-chords.init();
+var instruments = require('./instruments.js');
 
 
-
-},{"./chords.js":2,"./index.js":3}],2:[function(require,module,exports){
-module.exports = {
+var UkuleleChords = {
   init: function () {
-    console.log('chords');
+    this.buildList();
+  },
+  buildList: function () {
+    var list = '<ul>';
+    for (var key in instruments) {
+      var inst = instruments[key];
+      list += '<li>';
+      list += inst.name + ' - ' + inst.tuning.default.join('');
+      list += '</li>';
+    }
+    list += '</ul>';
+    document.getElementById('instruments').innerHTML = list;
   }
 };
-},{}],3:[function(require,module,exports){
+
+window.onload = function () {
+  UkuleleChords.init();
+};
+
+},{"./index.js":2,"./instruments.js":3}],2:[function(require,module,exports){
 /*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -73,4 +86,22 @@ var app = {
 
 module.exports = app;
 
+},{}],3:[function(require,module,exports){
+module.exports = {
+  'ukulele-baritone': {
+    name: 'Baritone Ukulele',
+    tuning: {
+      default: ['D', 'G', 'B', 'E']
+    },
+    chords: {
+      'A': [2, 2, 2, null],
+      'B': [4, 4, 4, 2],
+      'C': [2, null, 1, null],
+      'D': [null, 2, 3, 2],
+      'E': [2, 1, null, null],
+      'F': [3, 2, 1, 1],
+      'G': [null, null, null, 3]
+    }
+  }
+};
 },{}]},{},[1]);

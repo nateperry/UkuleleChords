@@ -8,7 +8,26 @@ app.initialize();
 /**
  *  Let's start doing our own stuff
  */
-var chords = require('./chords.js');
-chords.init();
+var instruments = require('./instruments.js');
 
 
+var UkuleleChords = {
+  init: function () {
+    this.buildList();
+  },
+  buildList: function () {
+    var list = '<ul>';
+    for (var key in instruments) {
+      var inst = instruments[key];
+      list += '<li>';
+      list += inst.name + ' - ' + inst.tuning.default.join('');
+      list += '</li>';
+    }
+    list += '</ul>';
+    document.getElementById('instruments').innerHTML = list;
+  }
+};
+
+window.onload = function () {
+  UkuleleChords.init();
+};
